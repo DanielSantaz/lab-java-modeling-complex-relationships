@@ -3,6 +3,7 @@ package com.example.javalab.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 import java.util.List;
 
@@ -12,8 +13,9 @@ public class Chapter {
     String name;
     String district;
 
-    @OneToMany
+    @OneToOne
     Member president;
+    @OneToMany(mappedBy ="chapter")
     List<Member> members;
 
     public Chapter(){};
